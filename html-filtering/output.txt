@@ -1,4 +1,7 @@
 file detected, reading...
+title: Hello, world!
+keywords: HTML,CSS,XML,JavaScript
+description: Free Web tutorials
 filtering html tags...
 result:
 
@@ -7,14 +10,16 @@ result:
     
     
     
+    
+    
 
     
     
 
-    Hello, world!
+    Hello, <<world>>!
   
   
-    Hello, world!
+    Hello, <<world>>!
 
     
     
