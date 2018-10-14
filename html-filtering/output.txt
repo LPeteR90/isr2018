@@ -1,0 +1,26 @@
+file detected, reading...
+filtering html tags...
+result:
+
+
+  
+    
+    
+    
+
+    
+    
+
+    Hello, world!
+  
+  
+    Hello, world!
+
+    
+    
+    
+    
+    
+  
+
+
