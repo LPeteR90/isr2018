@@ -1,0 +1,251 @@
+Program execution:
+python levenshtein.py Workday Saturday
+(if no arguments given, those two words are taken as default)
+
+Input: Workday, Saturday
+
+Output:
+
+Reading given words.
+Calculating Levensthein Distance for 'workday' and 'saturday'
+Init column 0 with numbers from 0 to m
+Init row 0 with numbers from 0 to n
+----------------- row 1 -----------------
+----------------- column 1 -----------------
+Diff characters: w vs. s - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 1 , 2 , 2 )
+->  1
+----------------- column 2 -----------------
+Diff characters: w vs. a - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 2 , 2 , 3 )
+->  2
+----------------- column 3 -----------------
+Diff characters: w vs. t - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 3 , 3 , 4 )
+->  3
+----------------- column 4 -----------------
+Diff characters: w vs. u - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 4 , 4 , 5 )
+->  4
+----------------- column 5 -----------------
+Diff characters: w vs. r - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 5 , 5 , 6 )
+->  5
+----------------- column 6 -----------------
+Diff characters: w vs. d - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 6 , 6 , 7 )
+->  6
+----------------- column 7 -----------------
+Diff characters: w vs. a - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 7 , 7 , 8 )
+->  7
+----------------- column 8 -----------------
+Diff characters: w vs. y - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 8 , 8 , 9 )
+->  8
+----------------- row 2 -----------------
+----------------- column 1 -----------------
+Diff characters: o vs. s - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 2 , 3 , 2 )
+->  2
+----------------- column 2 -----------------
+Diff characters: o vs. a - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 2 , 3 , 3 )
+->  2
+----------------- column 3 -----------------
+Diff characters: o vs. t - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 3 , 3 , 4 )
+->  3
+----------------- column 4 -----------------
+Diff characters: o vs. u - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 4 , 4 , 5 )
+->  4
+----------------- column 5 -----------------
+Diff characters: o vs. r - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 5 , 5 , 6 )
+->  5
+----------------- column 6 -----------------
+Diff characters: o vs. d - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 6 , 6 , 7 )
+->  6
+----------------- column 7 -----------------
+Diff characters: o vs. a - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 7 , 7 , 8 )
+->  7
+----------------- column 8 -----------------
+Diff characters: o vs. y - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 8 , 8 , 9 )
+->  8
+----------------- row 3 -----------------
+----------------- column 1 -----------------
+Diff characters: r vs. s - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 3 , 4 , 3 )
+->  3
+----------------- column 2 -----------------
+Diff characters: r vs. a - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 3 , 4 , 3 )
+->  3
+----------------- column 3 -----------------
+Diff characters: r vs. t - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 3 , 4 , 4 )
+->  3
+----------------- column 4 -----------------
+Diff characters: r vs. u - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 4 , 4 , 5 )
+->  4
+----------------- column 5 -----------------
+Same characters: r vs. r - insert value A[i-1, j-1]:
+-> 4
+----------------- column 6 -----------------
+Diff characters: r vs. d - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 6 , 5 , 7 )
+->  5
+----------------- column 7 -----------------
+Diff characters: r vs. a - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 7 , 6 , 8 )
+->  6
+----------------- column 8 -----------------
+Diff characters: r vs. y - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 8 , 7 , 9 )
+->  7
+----------------- row 4 -----------------
+----------------- column 1 -----------------
+Diff characters: k vs. s - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 4 , 5 , 4 )
+->  4
+----------------- column 2 -----------------
+Diff characters: k vs. a - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 4 , 5 , 4 )
+->  4
+----------------- column 3 -----------------
+Diff characters: k vs. t - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 4 , 5 , 4 )
+->  4
+----------------- column 4 -----------------
+Diff characters: k vs. u - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 4 , 5 , 5 )
+->  4
+----------------- column 5 -----------------
+Diff characters: k vs. r - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 5 , 5 , 5 )
+->  5
+----------------- column 6 -----------------
+Diff characters: k vs. d - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 5 , 6 , 6 )
+->  5
+----------------- column 7 -----------------
+Diff characters: k vs. a - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 6 , 6 , 7 )
+->  6
+----------------- column 8 -----------------
+Diff characters: k vs. y - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 7 , 7 , 8 )
+->  7
+----------------- row 5 -----------------
+----------------- column 1 -----------------
+Diff characters: d vs. s - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 5 , 6 , 5 )
+->  5
+----------------- column 2 -----------------
+Diff characters: d vs. a - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 5 , 6 , 5 )
+->  5
+----------------- column 3 -----------------
+Diff characters: d vs. t - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 5 , 6 , 5 )
+->  5
+----------------- column 4 -----------------
+Diff characters: d vs. u - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 5 , 6 , 5 )
+->  5
+----------------- column 5 -----------------
+Diff characters: d vs. r - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 5 , 6 , 6 )
+->  5
+----------------- column 6 -----------------
+Same characters: d vs. d - insert value A[i-1, j-1]:
+-> 5
+----------------- column 7 -----------------
+Diff characters: d vs. a - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 6 , 6 , 7 )
+->  6
+----------------- column 8 -----------------
+Diff characters: d vs. y - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 7 , 7 , 8 )
+->  7
+----------------- row 6 -----------------
+----------------- column 1 -----------------
+Diff characters: a vs. s - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 6 , 7 , 6 )
+->  6
+----------------- column 2 -----------------
+Same characters: a vs. a - insert value A[i-1, j-1]:
+-> 5
+----------------- column 3 -----------------
+Diff characters: a vs. t - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 6 , 6 , 6 )
+->  6
+----------------- column 4 -----------------
+Diff characters: a vs. u - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 6 , 7 , 6 )
+->  6
+----------------- column 5 -----------------
+Diff characters: a vs. r - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 6 , 7 , 6 )
+->  6
+----------------- column 6 -----------------
+Diff characters: a vs. d - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 6 , 7 , 6 )
+->  6
+----------------- column 7 -----------------
+Same characters: a vs. a - insert value A[i-1, j-1]:
+-> 5
+----------------- column 8 -----------------
+Diff characters: a vs. y - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 7 , 6 , 8 )
+->  6
+----------------- row 7 -----------------
+----------------- column 1 -----------------
+Diff characters: y vs. s - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 7 , 8 , 7 )
+->  7
+----------------- column 2 -----------------
+Diff characters: y vs. a - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 7 , 8 , 6 )
+->  6
+----------------- column 3 -----------------
+Diff characters: y vs. t - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 6 , 7 , 7 )
+->  6
+----------------- column 4 -----------------
+Diff characters: y vs. u - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 7 , 7 , 7 )
+->  7
+----------------- column 5 -----------------
+Diff characters: y vs. r - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 7 , 8 , 7 )
+->  7
+----------------- column 6 -----------------
+Diff characters: y vs. d - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 7 , 8 , 7 )
+->  7
+----------------- column 7 -----------------
+Diff characters: y vs. a - select minimal value:
+-> min(A[i-1, j-1]+1, A[i, j-1]+1, A[i-1, j]+1): min( 7 , 8 , 6 )
+->  6
+----------------- column 8 -----------------
+Same characters: y vs. y - insert value A[i-1, j-1]:
+-> 5
+
+
+
+----------------- Levenshtein Matrix: -----------------
+[[0 1 2 3 4 5 6 7 8]
+ [1 1 2 3 4 5 6 7 8]
+ [2 2 2 3 4 5 6 7 8]
+ [3 3 3 3 4 4 5 6 7]
+ [4 4 4 4 4 5 5 6 7]
+ [5 5 5 5 5 5 5 6 7]
+ [6 6 5 6 6 6 6 5 6]
+ [7 7 6 6 7 7 7 6 5]]
+ Levenshtein Distance:  5
