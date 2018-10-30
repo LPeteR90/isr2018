@@ -1,4 +1,4 @@
-Reading given words.
+No words given - calculation performed with default words.
 Calculating Levensthein Distance for 'workday' and 'saturday'
 Init column 0 with numbers from 0 to m
 Init row 0 with numbers from 0 to n
