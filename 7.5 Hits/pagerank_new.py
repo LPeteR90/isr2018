@@ -1,6 +1,11 @@
 
-import networkx
 import copy
+import sys
+
+try:
+    sys.stdout = open('7.5 Hits\\output.txt', 'w')
+except:
+    sys.stdout = open('output.txt', 'w')
 
 q = 0.15
 
@@ -35,10 +40,14 @@ def normalize(loc_graph):
 graph = [Node([], [7]), Node([], [7]), Node([], [7]), Node([], [8, 9, 10]), Node([], [8, 9, 10]), Node([], [8, 9]),
          Node([1, 2, 3], [11]), Node([4, 5, 6], []), Node([4, 5, 6], [12]), Node([4, 5], []), Node([7], []),
          Node([9], [])]
-
+print("----------------------------------------")
+print("7.6. CALCULATION: Page Rank Algorithm")
+print("----------------------------------------")
 print("--------Iteration", 0, "--------")
+print("Calculating the initial Page Rank values")
+print("----------------------------")
 for counter in range(len(graph)):
-    print(str(counter + 1) + ":", graph[counter].rank)
+    print("D" + str(counter + 1) + ":", graph[counter].rank)
 
 for counter in range(3):
     print("--------Iteration", counter + 1, "--------")
@@ -50,7 +59,7 @@ for counter in range(3):
         #if len(node.outgoing) > 0:
         helper_graph[idx].rank += (1.0 - q) * sum_function(graph, node.incoming)
         print("D" + str(idx + 1) + ":", helper_graph[idx].rank)
-    print("----normalized---")
+    print("----normalized values---")
     normalize(helper_graph)
 
     graph = copy.deepcopy(helper_graph)
